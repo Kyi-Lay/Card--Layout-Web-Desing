@@ -2,7 +2,7 @@
     --peamary-color: rgp(0, 0, 0);
     --card-border-radious: 7px;
     --card-title-color: orange;
-    --caed-category-color:var(--caed-category-color)seagreen;    
+    --card-category-color: seagreen;    
 }
 
 * {
@@ -16,7 +16,7 @@ body {
     font-size: 14px;
     display: flex;
     align-items: center;
-    margin: 3rem;
+    margin: 2rem;
 }
 
 /* This is mobile view */
@@ -25,14 +25,21 @@ body {
     /* max-width: 1200px; */
     width: auto;
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     margin: 35px;
     gap: 2rem;
 }
 
+.card {
+    box-shadow: 0px 2px 4px #333;
+    border-radius: var(--card-border-radious);
+    transition: all 0.2 ease-out;
+}
+
 .card:hover {
 /* border: 1px solid#000; */
-    box-shadow: 0px 2px 4px #333;
+    box-shadow: 3px 6px 4px #333;
+    transform: translateX(-5px);
 }
 
 .card-link {
@@ -48,6 +55,7 @@ body {
     /* height: 50%; */
     border-top-left-radius: var(--card-border-radious);
     border-top-right-radius: var(--card-border-radious);
+    object-fit: cover;
 }
 
 .card-body {
@@ -63,10 +71,10 @@ body {
     font-weight: 500;
 }
 
-.caed-title {
+.card-title {
     color: var(--card-title-color);
     margin-bottom: 1.3rem;
-    font-family: serif;
+    font-family: cursive;
     font-size: 2rem;
 }
 
@@ -78,23 +86,25 @@ body {
 
 .card-post-info {
    display: flex;
-   alight-items: center;
+   align-items: center;
    gap: 1rem; 
 }
 
 .card-avatar {
     width: 70%;
-    height: 70%;
+    height: 85%;
     border-radius: 50%;
     object-fit: cover;
 }
 
 .card-author {
     color: var(--caed-category-color);
+    font-family: cursive;
+    font-size: 0.5rem;
 }
 
 .card-date {
-   color: black; 
+   color: #777; 
 }
 
 /* This is table view */
@@ -104,9 +114,19 @@ body {
     }
 }
 
+.card-img {
+    width: 100%;
+    height: 28%;
+}
+
 /* This is desktop view */
 @media (mix-width: 1200px) {
     .card-container {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
     }
+}
+
+.card-img {
+    width: 100%;
+    height: 20%;
 }
